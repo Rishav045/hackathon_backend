@@ -37,7 +37,7 @@ const train = async(req,res)=>{
     messages:[
         {
           "role": "user",
-          "content": Text
+          "content": query
         }
       ]
   });
