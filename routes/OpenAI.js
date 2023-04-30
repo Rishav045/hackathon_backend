@@ -1,8 +1,9 @@
 const express = require('express')
 const router= express.Router();
-const {runPrompt1}= require('../controllers/OpenAI.js')
+const {runPrompt1,train}= require('../controllers/OpenAI.js')
 
 router.route('/').post(runPrompt1);
+router.route('/trains').post(train);
 
 
 

@@ -25,4 +25,23 @@ const runPrompt1 =async(req,res)=>{
     res.send ({"data":response.data.choices[0].message.content});
 }
 
-module.exports={runPrompt1}
+const train = async(req,res)=>{
+  const from = req.body.from;
+  const to = req.body.to;
+  const weekdays = req.body.weekdays;
+
+  const query =  "List of trains from "+from+"to" +to+"  with arrival and departure time for "+weekdays;
+  const response = await openai.createChatCompletion({
+    model:"gpt-3.5-turbo",
+    max_tokens:2048,
+    messages:[
+        {
+          "role": "user",
+          "content": Text
+        }
+      ]
+  });
+  res.send({"data":response.data.choices[0].message.content});
+}
+
+module.exports={runPrompt1,train}
