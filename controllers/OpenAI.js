@@ -41,6 +41,8 @@ const train = async(req,res)=>{
         }
       ]
   });
+  console.log(query);
+  console.log(response.data.choices[0].message.content)
   res.send({"data":response.data.choices[0].message.content});
 }
 
