@@ -30,7 +30,7 @@ const train = async(req,res)=>{
   const to = req.body.to;
   const weekdays = req.body.weekdays;
 
-  const query =  "List of trains from "+from+"to" +to+"  with arrival and departure time for "+weekdays;
+  const query =  "List of trains from "+from+"to" +to+"  on"+weekdays+"with timing";
   const response = await openai.createChatCompletion({
     model:"gpt-3.5-turbo",
     max_tokens:2048,
