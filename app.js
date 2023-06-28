@@ -10,6 +10,8 @@ const authRouter = require('./routes/auth.js')
 const openAiRouter = require('./routes/OpenAI.js')
 const connectDb = require('./db/connect')
 const authenticatedUser = require('./middleware/authentication');
+const cors = require('cors');
+  app.use(cors());
 
 app.use(express.json());
 // extra packages
